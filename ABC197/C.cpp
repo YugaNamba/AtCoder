@@ -30,6 +30,14 @@ void print(Head&& head, Tail&&... tail) {
 int main() {
   int n;
   cin >> n;
+  lvec a(n);
+  REP(i, n) cin >> a[i];
+  
+  REP(i, n) {
+    REP(j, n) {
+      
+    }
+  }
   print(n);
   return 0;
 }

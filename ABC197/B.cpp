@@ -28,8 +28,46 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  int H, W, X, Y;
+  cin >> H >> W >> X >> Y;
+  svec g(H+1);
+  REP(i, H)
+  {
+    cin >> g[i];
+  }
+  X--;
+  Y--;
+  int ans = g[X][Y] == '.' ? 1 : 0;
+  RREP(i, X)
+  {
+    if (g[i][Y] == '.') {
+      ans++;
+    } else {
+      break;
+    }
+  }
+  FOR(i, X+1, H) {
+    if (g[i][Y] == '.') {
+      ans++;
+    } else {
+      break;
+    }
+  }
+  RREP(i, Y)
+  {
+    if (g[X][i] == '.') {
+      ans++;
+    } else {
+      break;
+    }
+  }
+  FOR(i, Y+1, W) {
+    if (g[X][i] == '.') {
+      ans++;
+    } else {
+      break;
+    }
+  }
+  print(ans);
   return 0;
 }

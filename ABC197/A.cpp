@@ -28,8 +28,10 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
+  string n;
   cin >> n;
+  swap(n[0], n[1]);
+  swap(n[1], n[2]);
   print(n);
   return 0;
 }

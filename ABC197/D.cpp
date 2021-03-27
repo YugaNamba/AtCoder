@@ -28,8 +28,19 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  int n, x0, y0, xn, yn;
+  cin >> n >> x0 >> y0 >> xn >> yn;
+  double x1, y1;
+  int p = 180 * (n - 2)/2;
+  int p2 = 180 - p;
+  double rad = p * (M_PI / 180);
+  double rad2 = p2 * (M_PI / 180);
+  double si = atan(yn - y0);
+  double c = (xn - x0) / si;
+  double c2 = c / 2;
+  double a = 2 * c2 * cos(rad);
+  x1 = x0 + cos(rad2) * a;
+  y1 = y0 + sin(rad2) * a;
+  cout << fixed << setprecision(10) << (x1) << " " << (y1) << "\n";
   return 0;
 }
