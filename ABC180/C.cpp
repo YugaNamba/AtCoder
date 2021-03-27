@@ -27,20 +27,23 @@ void print(Head&& head, Tail&&... tail) {
   print(forward<Tail>(tail)...);
 }
 
-set<ll> divisor(ll n) {
-  set<ll> ret;
+lvec divisor(ll n) {
+  vector<ll> ret;
   for (ll i = 1; i * i <= n; i++) {
-    if (n % i != 0) continue;
-    ret.insert(i);
-    ret.insert(n/i);
+    if (n % i == 0) {
+      ret.push_back(i);
+      if (i * i != n) ret.push_back(n / i);
+    }
   }
-  return ret;
+  sort(begin(ret), end(ret));
+  return (ret);
 }
+
 
 int main() {
   ll n;
   cin >> n;
-  set<ll> s = divisor(n);
+  lvec s = divisor(n);
   for ( auto i : s ) print(i);
   return 0;
 }
