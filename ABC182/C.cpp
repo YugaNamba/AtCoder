@@ -28,8 +28,17 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
+  ll n;
   cin >> n;
-  print(n);
+  string s = to_string(n);
+  int size = s.size();
+  int count = 0;
+  while (n) {
+    int x = n % 10;
+    if (x % 3 != 0) count++;
+    n /= 10;
+  }
+  int ans = count == size ? -1 : count;
+  print(ans);
   return 0;
 }

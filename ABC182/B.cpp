@@ -30,6 +30,23 @@ void print(Head&& head, Tail&&... tail) {
 int main() {
   int n;
   cin >> n;
-  print(n);
+  ivec a(n);
+  REP(i, n) cin >> a[i];
+  int GCD = 0;
+  int ans = 2;
+  
+  FOR(k, 2, 1001)
+  {
+    int count = 0;
+    REP(i, n)
+    {
+      if (a[i] % k == 0) count++;
+      if (GCD < count) {
+        GCD = count;
+        ans = k;
+      } 
+    }
+  }
+  print(ans);
   return 0;
 }

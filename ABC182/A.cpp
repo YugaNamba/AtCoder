@@ -28,8 +28,9 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  int a, b;
+  cin >> a >> b;
+  int ans = max(0, (2*a+100) - b);
+  print(ans);
   return 0;
 }
