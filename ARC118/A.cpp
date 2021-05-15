@@ -28,8 +28,22 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  int t;
+  ll n;
+  cin >> t >> n;
+  lvec nums;
+  ll pre = 0;
+  FOR(i, 1, 1e7)
+  {
+    if (nums.size() >= n) {
+      break;
+    }
+    int tmp = floor(i * t);
+    if (tmp - pre > 0) {
+      nums.push_back(floor(pre + 1));
+    }
+    pre = tmp;
+  }
+  print(nums[n]);
   return 0;
 }
