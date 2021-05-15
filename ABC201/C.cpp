@@ -28,8 +28,19 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  string s;
+  cin >> s;
+  ll ans = 0;
+  int o, x, z = 0;
+  for (char c : s) {
+    if (c == 'o') o++;
+    if (c == 'x') x++;
+    if (c == '?') z++;
+  }
+  if (o > 4 || x == 10) {
+    print(0);
+    return 0;
+  }
+  print(ans);
   return 0;
 }

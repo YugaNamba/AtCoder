@@ -28,12 +28,18 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  ivec a(3);
-  cin >> a[0] >> a[1] >> a[2];
-  sort(a.begin(), a.end());
-  int ab1 = a[2] - a[1];
-  int ab2 = a[1] - a[0];
-  bool x = ab1 == ab2;
-  print(x ? "Yes" : "No");
+  int h, w;
+  cin >> h >> w;
+  svec g(h);
+  REP(i, h) cin >> g[i];
+  int x, y = 0;
+
+
+
+  if (x == y) {
+    print("Draw");
+    return 0;
+  }
+  print(x > y ? "Takahashi" : "Aoki");
   return 0;
 }

@@ -30,6 +30,21 @@ void print(Head&& head, Tail&&... tail) {
 int main() {
   int n;
   cin >> n;
-  print(n);
+  svec s(n);
+  ivec t(n);
+  REP(i, n) cin >> s[i] >> t[i];
+  int mCount = 0;
+  for (int x : t) {
+    mCount = max(mCount, x);
+  }
+  int m2Count = 0;
+  int m2Index = 0;
+  for (int i = 0; i < n; i++) {
+    if (m2Count < t[i] && t[i] != mCount ) {
+      m2Count = t[i];
+      m2Index = i;
+    }
+  }
+  print(s[m2Index]);
   return 0;
 }
