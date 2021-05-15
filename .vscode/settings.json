@@ -3,5 +3,8 @@
     "RFOR",
     "RREP",
     "lvec"
-  ]
+  ],
+  "files.associations": {
+    "iostream": "cpp"
+  }
 }
