@@ -30,16 +30,21 @@ void print(Head&& head, Tail&&... tail) {
 int main() {
   string s;
   cin >> s;
-  ll ans = 0;
-  int o, x, z = 0;
-  for (char c : s) {
-    if (c == 'o') o++;
-    if (c == 'x') x++;
-    if (c == '?') z++;
-  }
-  if (o > 4 || x == 10) {
-    print(0);
-    return 0;
+  int ans = 0;
+  REP(num, 10000) {
+    ivec a(10);
+    int x = num;
+    REP(i, 4) {
+      int d = x % 10;
+      a[d] = 1;
+      x /= 10;
+    }
+    bool ok = true;
+    REP(i, 10) {
+      if (s[i] == 'o' && a[i] != 1) ok = false;
+      if (s[i] == 'x' && a[i] != 0) ok = false;
+    }
+    if (ok) ans++;
   }
   print(ans);
   return 0;
