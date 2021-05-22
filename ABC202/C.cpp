@@ -40,7 +40,7 @@ int main() {
     b[i]--;
     c[i]--;
   }
-  ivec count(n );
+  ivec count(n);
   REP(i, n) count[b[c[i]]]++;
 
   ll ans = 0;
