@@ -30,6 +30,24 @@ void print(Head&& head, Tail&&... tail) {
 int main() {
   int n;
   cin >> n;
-  print(n);
+
+  ivec a(n+1), b(n+1), c(n+1);
+  REP(i, n) cin >> a[i];
+  REP(i, n) cin >> b[i];
+  REP(i, n) cin >> c[i];
+  ivec aMemo(n + 1);
+  REP(i, n) aMemo[a[i]]++;
+
+  int ans = 0;
+
+  REP(i, n) {
+    int cj = c[i] -1;
+    int bcj = b[cj];
+    int aix = aMemo[b[cj]];
+    bool ok = bcj > 0;
+    if (ok) ans += aix;
+  }
+
+  print(ans);
   return 0;
 }

@@ -28,8 +28,9 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  int a, b, c;
+  cin >> a >> b >> c;
+  int ans = 7 - a + 7 - b + 7 - c;
+  print(ans);
   return 0;
 }

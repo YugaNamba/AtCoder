@@ -20,6 +20,8 @@ const ll INF = 1000000000000000000LL;
 
 void print() { cout << endl; }
 
+vector<char> i = {'0', '1', '0', '0', '0', '0', '9', '0', '8', '6'};
+
 template <class Head, class... Tail>
 void print(Head&& head, Tail&&... tail) {
   cout << head;
@@ -28,8 +30,13 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  string s;
+  cin >> s;
+  string ans = "";
+  for (char c : s) {
+    ans += i[c - '0'];
+  }
+  reverse(ans.begin(), ans.end());
+  print(ans);
   return 0;
 }
