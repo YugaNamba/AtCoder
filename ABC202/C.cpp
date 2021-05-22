@@ -31,22 +31,21 @@ int main() {
   int n;
   cin >> n;
 
-  ivec a(n+1), b(n+1), c(n+1);
+  ivec a(n), b(n), c(n);
   REP(i, n) cin >> a[i];
   REP(i, n) cin >> b[i];
   REP(i, n) cin >> c[i];
-  ivec aMemo(n + 1);
-  REP(i, n) aMemo[a[i]]++;
-
-  int ans = 0;
-
   REP(i, n) {
-    int cj = c[i] -1;
-    int bcj = b[cj];
-    int aix = aMemo[b[cj]];
-    bool ok = bcj > 0;
-    if (ok) ans += aix;
+    a[i]--;
+    b[i]--;
+    c[i]--;
   }
+  ivec count(n );
+  REP(i, n) count[b[c[i]]]++;
+
+  ll ans = 0;
+
+  REP(i, n) ans += count[a[i]];
 
   print(ans);
   return 0;
