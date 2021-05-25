@@ -32,6 +32,7 @@ int main() {
   cin >> r >> x >> y;
   double goalEuclideanDistance = sqrt(x * x + y * y);
   int ans = ceil(goalEuclideanDistance/ r);
+  if (ans == 1 && goalEuclideanDistance != r) ans++;
   print(ans);
   return 0;
 }
