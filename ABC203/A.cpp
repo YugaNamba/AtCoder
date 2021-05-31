@@ -28,8 +28,12 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  int a, b, c;
+  cin >> a >> b >> c;
+  if (a == b) {
+    print(0);
+  } else {
+
+  }
   return 0;
 }
