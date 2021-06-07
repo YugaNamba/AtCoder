@@ -28,8 +28,9 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
-  print(n);
+  int x, y;
+  cin >> x >> y;
+  if (x == y) print(x);
+  else print(3 - x - y);
   return 0;
 }

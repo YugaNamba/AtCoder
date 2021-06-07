@@ -30,6 +30,14 @@ void print(Head&& head, Tail&&... tail) {
 int main() {
   int n;
   cin >> n;
-  print(n);
+  ivec a(n);
+  REP(i, n) cin >> a[i];
+  ll ans = 0;
+  REP(i, n) {
+    if (a[i] > 10) {
+      ans += a[i] - 10;
+    }
+  }
+  print(ans);
   return 0;
 }

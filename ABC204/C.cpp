@@ -28,8 +28,10 @@ void print(Head&& head, Tail&&... tail) {
 }
 
 int main() {
-  int n;
-  cin >> n;
+  int n, m;
+  cin >> n >> m;
+  ivec a(m), b(m);
+  REP(i, m) cin >> a[i] >> b[i];
   print(n);
   return 0;
 }
